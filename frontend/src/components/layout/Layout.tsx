@@ -1,5 +1,5 @@
 import { Sidebar } from '@/components/sidebar/Sidebar'
-import { TopBar } from './TopBar'
+import { Topbar } from '@/components/topbar/Topbar'
 import MainContent from './MainContent'
 
 interface LayoutProps {
@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="flex min-h-screen bg-space-950 text-slate-100">
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col">
-        <TopBar />
+        <Topbar />
         <MainContent>{children}</MainContent>
       </div>
     </div>
