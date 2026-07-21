@@ -1,0 +1,9 @@
+.theme-surface {
+  background-color: rgba(10, 14, 26, 0.8);
+}
+
+.theme-panel {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
