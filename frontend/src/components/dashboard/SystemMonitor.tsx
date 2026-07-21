@@ -40,7 +40,7 @@ export function SystemMonitor() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.08 }}
-            className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5"
+            className="rounded-xl border border-white/5 bg-white/2 p-3.5"
           >
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">

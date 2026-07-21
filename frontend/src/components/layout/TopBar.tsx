@@ -3,7 +3,7 @@ import Avatar from '@/components/common/Avatar'
 
 export function TopBar() {
   return (
-    <header className="flex h-[70px] items-center justify-between border-b border-white/10 bg-space-900/70 px-4 sm:px-6">
+    <header className="flex h-17.5 items-center justify-between border-b border-white/10 bg-space-900/70 px-4 sm:px-6">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-linear-to-br from-neon-purple to-neon-cyan text-white">
           <span className="text-sm font-semibold">G</span>

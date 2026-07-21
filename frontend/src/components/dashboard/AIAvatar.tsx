@@ -44,7 +44,7 @@ export function AIAvatar({ size = 'md' }: AIAvatarProps) {
       />
 
       <motion.div
-        className="relative flex items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-purple-500 to-blue-500 neon-glow-purple"
+        className="relative flex items-center justify-center rounded-full bg-linear-to-br from-purple-600 via-purple-500 to-blue-500 neon-glow-purple"
         style={{ width: dims.inner, height: dims.inner }}
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
@@ -54,7 +54,7 @@ export function AIAvatar({ size = 'md' }: AIAvatarProps) {
           style={{ width: dims.inner - 8, height: dims.inner - 8 }}
         >
           <motion.div
-            className="rounded-full bg-gradient-to-br from-white/90 to-purple-200/80"
+            className="rounded-full bg-linear-to-br from-white/90 to-purple-200/80"
             style={{
               width: dims.inner * 0.35,
               height: dims.inner * 0.35,

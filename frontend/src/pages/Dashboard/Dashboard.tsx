@@ -33,7 +33,7 @@ export default function Dashboard() {
               </span>
             </div>
             <div className="flex items-center justify-center py-4">
-              <div className="h-40 w-40 rounded-full border border-white/10 bg-[radial-gradient(circle,_rgba(168,85,247,0.28),_transparent_62%)]" />
+              <div className="h-40 w-40 rounded-full border border-white/10 bg-[radial-gradient(circle,rgba(168,85,247,0.28),transparent_62%)]" />
             </div>
             <div className="mt-2 space-y-2 text-sm text-slate-400">
               <div className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-3 py-2">

@@ -1,34 +1,68 @@
 import { motion } from 'framer-motion'
 import { Paperclip, Sparkles } from 'lucide-react'
+import { useState } from 'react'
 import { ChatWindow } from '@/components/chat/ChatWindow'
 import { ChatInput } from '@/components/chat/ChatInput'
 import { SuggestedPrompts } from '@/components/chat/SuggestedPrompts'
 import { ConversationHistory } from '@/components/chat/ConversationHistory'
 import { ModelSelector } from '@/components/chat/ModelSelector'
 import { GlassCard } from '@/components/ui/GlassCard'
+import { sendChatMessage } from '@/services/chatService'
 
-const sampleMessages = [
+interface ChatMessage {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  timestamp: string
+}
+
+const initialMessages: ChatMessage[] = [
   {
     id: '1',
-    role: 'assistant' as const,
+    role: 'assistant',
     content: 'Hello! I’m Gipsy. I can help you summarize work, draft ideas, or plan your next move.',
     timestamp: '09:41',
-  },
-  {
-    id: '2',
-    role: 'user' as const,
-    content: 'Can you help me outline the next steps for the dashboard?',
-    timestamp: '09:42',
-  },
-  {
-    id: '3',
-    role: 'assistant' as const,
-    content: 'Absolutely. I’d focus on refining the layout, polishing motion, and tightening the content hierarchy.',
-    timestamp: '09:43',
   },
 ]
 
 export default function Chat() {
+  const [messages, setMessages] = useState<ChatMessage[]>(initialMessages)
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSend = async () => {
+    const trimmed = input.trim()
+    if (!trimmed || isLoading) return
+
+    const userMessage: ChatMessage = {
+      id: crypto.randomUUID(),
+      role: 'user',
+      content: trimmed,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    }
+
+    setMessages((current) => [...current, userMessage])
+    setInput('')
+    setError('')
+    setIsLoading(true)
+
+    try {
+      const reply = await sendChatMessage(trimmed)
+      const assistantMessage: ChatMessage = {
+        id: crypto.randomUUID(),
+        role: 'assistant',
+        content: reply,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      }
+      setMessages((current) => [...current, assistantMessage])
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unexpected error')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }} className="space-y-6">
       <GlassCard variant="glow" glowColor="blue" className="overflow-hidden">
@@ -55,7 +89,7 @@ export default function Chat() {
 
       <div className="grid gap-6 xl:grid-cols-12">
         <div className="xl:col-span-8">
-          <ChatWindow messages={sampleMessages} />
+          <ChatWindow messages={messages} isLoading={isLoading} />
         </div>
         <div className="xl:col-span-4 space-y-6">
           <ConversationHistory />
@@ -64,7 +98,8 @@ export default function Chat() {
       </div>
 
       <GlassCard className="p-4">
-        <ChatInput />
+        <ChatInput value={input} onChange={setInput} onSend={handleSend} disabled={isLoading} />
+        {error && <p className="mt-3 text-sm text-rose-300">{error}</p>}
       </GlassCard>
     </motion.div>
   )

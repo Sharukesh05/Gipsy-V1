@@ -4,7 +4,7 @@ const prompts = ['Summarize my day', 'Draft a product plan', 'Generate a researc
 
 export function SuggestedPrompts() {
   return (
-    <div className="rounded-[24px] border border-white/10 bg-[#121218]/80 p-4">
+    <div className="rounded-3xl border border-white/10 bg-[#121218]/80 p-4">
       <p className="text-sm font-medium text-white">Suggested prompts</p>
       <div className="mt-3 space-y-2">
         {prompts.map((prompt, index) => (

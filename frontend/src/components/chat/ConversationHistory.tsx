@@ -8,7 +8,7 @@ const history = [
 
 export function ConversationHistory() {
   return (
-    <div className="rounded-[24px] border border-white/10 bg-[#121218]/80 p-4">
+    <div className="rounded-3xl border border-white/10 bg-[#121218]/80 p-4">
       <div className="flex items-center gap-2 text-sm font-medium text-white">
         <MessageSquareText size={16} className="text-purple-300" />
         Recent conversations

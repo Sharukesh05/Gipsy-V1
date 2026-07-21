@@ -21,7 +21,7 @@ export function QuickActions() {
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
             className={cn(
-              'group flex flex-col items-center gap-2.5 rounded-xl border border-white/5 bg-gradient-to-br p-4 text-center transition-colors hover:border-white/10',
+              'group flex flex-col items-center gap-2.5 rounded-xl border border-white/5 bg-linear-to-br p-4 text-center transition-colors hover:border-white/10',
               action.color,
             )}
           >

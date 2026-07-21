@@ -53,7 +53,7 @@ export function ProgressBar({
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
           className={cn(
-            'h-full rounded-full bg-gradient-to-r',
+            'h-full rounded-full bg-linear-to-r',
             colorMap[color],
           )}
           style={{

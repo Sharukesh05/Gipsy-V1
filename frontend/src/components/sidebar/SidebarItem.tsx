@@ -20,7 +20,7 @@ export function SidebarItem({ item, active, collapsed, onNavigate }: SidebarItem
       className={cn(
         'group relative flex w-full items-center rounded-2xl border border-transparent px-3 py-3 text-left transition-all duration-200',
         active
-          ? 'bg-gradient-to-r from-purple-500/20 to-blue-500/10 text-white shadow-[0_0_0_1px_rgba(167,139,250,0.2)]'
+          ? 'bg-linear-to-r from-purple-500/20 to-blue-500/10 text-white shadow-[0_0_0_1px_rgba(167,139,250,0.2)]'
           : 'text-slate-400 hover:border-white/10 hover:bg-white/5 hover:text-white',
       )}
     >

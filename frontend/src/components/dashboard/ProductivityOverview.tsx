@@ -40,7 +40,7 @@ export function ProductivityOverview() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.08 }}
               className={cn(
-                'rounded-xl bg-gradient-to-br p-3.5',
+                'rounded-xl bg-linear-to-br p-3.5',
                 colorStyles[stat.color as keyof typeof colorStyles],
               )}
             >

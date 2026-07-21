@@ -19,7 +19,7 @@ export function MessageBubble({ role, content, timestamp }: MessageBubbleProps) 
       className={cn('flex gap-3', isAssistant ? 'justify-start' : 'justify-end')}
     >
       {isAssistant && (
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 text-purple-200">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-purple-500/20 to-blue-500/20 text-purple-200">
           <Bot size={16} />
         </div>
       )}
@@ -30,7 +30,7 @@ export function MessageBubble({ role, content, timestamp }: MessageBubbleProps) 
             'rounded-2xl px-4 py-3 text-sm leading-7',
             isAssistant
               ? 'bg-white/5 text-slate-300'
-              : 'bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white',
+              : 'bg-linear-to-r from-purple-500/20 to-blue-500/20 text-white',
           )}
         >
           {content}

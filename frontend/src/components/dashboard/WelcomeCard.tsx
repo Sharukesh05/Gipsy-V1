@@ -5,7 +5,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 export function WelcomeCard() {
   return (
     <GlassCard variant="glow" glowColor="purple" className="overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.18),_transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.18),transparent_45%)]" />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

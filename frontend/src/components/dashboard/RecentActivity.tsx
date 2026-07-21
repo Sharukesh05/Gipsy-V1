@@ -18,7 +18,7 @@ export function RecentActivity() {
       <SectionHeader title="Recent Activity" subtitle="Latest updates from Gipsy" />
 
       <div className="relative space-y-0">
-        <div className="absolute bottom-2 left-[19px] top-2 w-px bg-gradient-to-b from-purple-500/30 via-blue-500/20 to-transparent" />
+        <div className="absolute bottom-2 left-4.75 top-2 w-px bg-linear-to-b from-purple-500/30 via-blue-500/20 to-transparent" />
 
         {recentActivity.map((item, index) => (
           <motion.div

@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({ children, variant = 'primary', className = '', ...props }: ButtonProps) {
   const styles =
     variant === 'primary'
-      ? 'bg-gradient-to-r from-neon-purple to-neon-cyan text-white hover:opacity-90'
+      ? 'bg-linear-to-r from-neon-purple to-neon-cyan text-white hover:opacity-90'
       : 'border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10'
 
   return (

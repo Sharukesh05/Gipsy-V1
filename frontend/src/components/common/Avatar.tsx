@@ -11,7 +11,7 @@ const sizeClass = {
 
 export default function Avatar({ name, size = 'md' }: AvatarProps) {
   return (
-    <div className={`flex items-center justify-center rounded-full bg-gradient-to-br from-neon-purple to-neon-cyan font-semibold text-white ${sizeClass[size]}`}>
+    <div className={`flex items-center justify-center rounded-full bg-linear-to-br from-neon-purple to-neon-cyan font-semibold text-white ${sizeClass[size]}`}>
       {name.slice(0, 1).toUpperCase()}
     </div>
   )

@@ -35,7 +35,7 @@ export function ChatPreview() {
                 className={cn(
                   'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg',
                   isAssistant
-                    ? 'bg-gradient-to-br from-purple-600 to-blue-600'
+                    ? 'bg-linear-to-br from-purple-600 to-blue-600'
                     : 'bg-white/10',
                 )}
               >
