@@ -12,7 +12,7 @@ export function Sidebar() {
     <>
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col transition-transform duration-300 ease-in-out',
+          'fixed inset-y-0 left-0 z-40 flex w-65 flex-col transition-transform duration-300 ease-in-out',
           'glass-strong border-r border-white/5',
           'lg:relative lg:translate-x-0',
           sidebarOpen ? 'translate-x-0' : '-translate-x-full',
@@ -20,7 +20,7 @@ export function Sidebar() {
       >
         <div className="flex items-center gap-3 border-b border-white/5 px-5 py-5">
           <div className="relative">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 neon-glow-purple">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-purple-600 to-blue-600 neon-glow-purple">
               <Sparkles className="h-5 w-5 text-white" />
             </div>
             <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-space-900" />
@@ -65,7 +65,7 @@ export function Sidebar() {
                 {isActive && (
                   <motion.div
                     layoutId="sidebar-active"
-                    className="absolute inset-0 rounded-xl border border-purple-500/20 bg-gradient-to-r from-purple-500/10 to-transparent"
+                    className="absolute inset-0 rounded-xl border border-purple-500/20 bg-linear-to-r from-purple-500/10 to-transparent"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
                   />
                 )}
@@ -91,7 +91,7 @@ export function Sidebar() {
         <div className="border-t border-white/5 p-4">
           <div className="glass rounded-xl p-3">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/30 to-blue-500/30 text-sm font-bold text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-purple-500/30 to-blue-500/30 text-sm font-bold text-white">
                 A
               </div>
               <div className="min-w-0 flex-1">

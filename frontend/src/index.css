@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+:root {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -78,8 +78,8 @@
       rgba(255, 255, 255, 0.06) 0%,
       rgba(255, 255, 255, 0.02) 100%
     );
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -89,8 +89,8 @@
       rgba(255, 255, 255, 0.1) 0%,
       rgba(255, 255, 255, 0.03) 100%
     );
-    backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
