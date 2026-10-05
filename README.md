@@ -31,3 +31,7 @@ venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
+
+## Backend Testing
+
+No project-owned backend test suite is currently present. Pytest was checked and collected zero project tests. Until a backend test suite is added, deployment verification relies on application/build checks and manual smoke testing.
