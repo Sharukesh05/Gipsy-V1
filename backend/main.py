@@ -9,9 +9,18 @@ load_dotenv()
 
 app = FastAPI(title="Gipsy API", version="1.0.0")
 
+frontend_origins_setting = os.getenv("FRONTEND_ORIGINS")
+frontend_origins = (
+    [origin.strip() for origin in frontend_origins_setting.split(",") if origin.strip()]
+    if frontend_origins_setting
+    else []
+)
+if not frontend_origins or "*" in frontend_origins:
+    raise ValueError("FRONTEND_ORIGINS must contain explicit frontend origins.")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=frontend_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

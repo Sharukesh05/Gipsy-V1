@@ -1,20 +1,27 @@
 import google.generativeai as genai
-from config import GEMINI_API_KEY
+from fastapi import HTTPException
+
+from config import GEMINI_API_KEY, GEMINI_MODEL_NAME
 
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel(GEMINI_MODEL_NAME)
 
 
 def get_gemini_response(message: str) -> str:
     if not GEMINI_API_KEY:
-        return "Hello Sharukesh! I'm Gipsy."
+        raise HTTPException(status_code=503, detail="Gemini is not configured.")
 
     try:
         response = model.generate_content(
             f"You are Gipsy, a helpful AI assistant. Respond warmly and briefly to: {message}"
         )
-        return response.text or "Hello Sharukesh! I'm Gipsy."
+        reply = response.text
     except Exception:
-        return "Hello Sharukesh! I'm Gipsy."
+        raise HTTPException(status_code=502, detail="Gemini request failed.") from None
+
+    if not reply:
+        raise HTTPException(status_code=502, detail="Gemini returned an empty response.")
+
+    return reply
